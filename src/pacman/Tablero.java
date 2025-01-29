@@ -36,7 +36,7 @@ public class Tablero extends Thread{
             
             MostrarTablero();
             try{
-                sleep(10000);
+                sleep(1000);
             }catch(Exception e){
                 
             }
@@ -75,13 +75,13 @@ public class Tablero extends Thread{
     public boolean ComprobarPared(int posX, int posY){
         String elemento = "";
         
-        if(!(posX <0 || posX >18)){
+        if(!(posX <0 || posX >14)){
           elemento = tablero[posX][posY];  
         }else{
             return false;
         }
         
-        if(!(posY <0 || posY >14)){
+        if(!(posY <0 || posY >18)){
           elemento = tablero[posX][posY];  
         }else{
             return false;

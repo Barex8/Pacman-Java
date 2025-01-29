@@ -14,15 +14,26 @@ import java.util.Scanner;
  */
 public class Teclado extends Thread{
     
-    public void run(){
-        Scanner sc = new Scanner(System.in);
-        String key;
-        
-        while(true){
+    Personaje pacman;
+    
+    public static int lastKeyPressed;
+    public boolean reading = true;
+    
+    public Teclado(Personaje pacman){
+        this.pacman = pacman;
+        lastKeyPressed = 100;
+        reading = true;
+    }
+   
+    public void run(){      
+        while(reading){
             try{
-                sleep(400);
-                key = sc.next(); 
-                System.out.println(key);
+                int key = System.in.read();
+                if (lastKeyPressed != key && key != 10) {
+                 lastKeyPressed = key;
+                 System.out.println(key);
+                }
+                
             }catch(Exception e){
                 
             }

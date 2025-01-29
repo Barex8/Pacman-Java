@@ -16,12 +16,14 @@ public class Pacman {
     
     public static void main(String[] args) {
         Tablero tablero = new Tablero();
-        Personaje player = new Personaje(true,400,9,9,tablero);
-        Personaje fantasma1 = new Personaje(false,800,10,7,tablero);
-        Personaje fantasma2 = new Personaje(false,800,9,7,tablero);
-        Personaje fantasma3 = new Personaje(false,800,8,7,tablero);
-        Personaje fantasma4 = new Personaje(false,800,9,6,tablero);
-        Teclado teclado = new Teclado();
+        
+        Personaje player = new Personaje(true,1000,9,9,tablero);
+        Personaje fantasma1 = new Personaje(false,1000,10,7,tablero);
+        Personaje fantasma2 = new Personaje(false,1000,9,7,tablero);
+        Personaje fantasma3 = new Personaje(false,1000,8,7,tablero);
+        Personaje fantasma4 = new Personaje(false,1000,9,6,tablero);
+        
+        Teclado teclado = new Teclado(player);
         
         teclado.start();
         tablero.start();
